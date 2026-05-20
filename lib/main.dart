@@ -71,5 +71,6 @@ class BicoApp extends StatelessWidget {
         '/create-post': (_) => const CreatePostScreen(),
       },
     );
+    .
   }
 }

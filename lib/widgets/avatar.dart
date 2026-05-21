@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/bicco_provider.dart';
+import '../providers/bico_provider.dart';
 
-class BiccoAvatar extends StatelessWidget {
+class BicoAvatar extends StatelessWidget {
   final String name;
   final double size;
   final Color? color;
 
-  const BiccoAvatar({super.key, required this.name, this.size = 36, this.color});
+  const BicoAvatar({super.key, required this.name, this.size = 36, this.color});
 
-  Color _pickColor(BiccoNotifier notifier) {
+  Color _pickColor(BicoNotifier notifier) {
     final colors = [
       notifier.tokens.green,
       notifier.tokens.purple,
@@ -35,7 +35,7 @@ class BiccoAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final notifier = context.watch<BiccoNotifier>();
+    final notifier = context.watch<BicoNotifier>();
     final bg = color ?? _pickColor(notifier);
     return Container(
       width: size,

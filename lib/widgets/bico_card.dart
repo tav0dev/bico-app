@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/bicco_provider.dart';
+import '../providers/bico_provider.dart';
 
-class BiccoCard extends StatelessWidget {
+class BicoCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry? padding;
   final double borderRadius;
 
-  const BiccoCard({
+  const BicoCard({
     super.key,
     required this.child,
     this.padding,
@@ -16,7 +16,7 @@ class BiccoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final notifier = context.watch<BiccoNotifier>();
+    final notifier = context.watch<BicoNotifier>();
     final tokens = notifier.tokens;
 
     Color bg;

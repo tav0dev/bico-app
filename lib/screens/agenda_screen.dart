@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import '../providers/bicco_provider.dart';
+import '../providers/bico_provider.dart';
 import '../widgets/top_bar.dart';
 import '../widgets/bottom_nav.dart';
 import '../widgets/ai_sparkle.dart';
@@ -24,7 +24,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
     _selectedDate = DateTime.now();
     _generateWeek(DateTime.now());
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<BiccoNotifier>().fetchGoogleEvents();
+      context.read<BicoNotifier>().fetchGoogleEvents();
     });
   }
 
@@ -38,7 +38,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final notifier = context.watch<BiccoNotifier>();
+    final notifier = context.watch<BicoNotifier>();
     final tokens = notifier.tokens;
 
     // LÓGICA DE FILTRAGEM ROBUSTA
@@ -87,7 +87,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
         children: [
           SafeArea(
             bottom: false,
-            child: BiccoTopBar(
+            child: BicoTopBar(
               title: DateFormat('MMMM yyyy', 'pt_BR').format(_selectedDate).toUpperCase(),
               leading: IconButton(
                 onPressed: () => notifier.fetchGoogleEvents(),
@@ -236,7 +236,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
               ],
             ),
           ),
-          BiccoBottomNav(active: NavTab.agenda, onTap: widget.onNavTap),
+          BicoBottomNav(active: NavTab.agenda, onTap: widget.onNavTap),
         ],
       ),
     );

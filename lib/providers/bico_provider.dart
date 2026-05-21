@@ -5,7 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../theme/tokens.dart';
 import '../services/google_calendar_service.dart';
 
-class BiccoNotifier extends ChangeNotifier {
+class BicoNotifier extends ChangeNotifier {
   bool isDark;
   String accent;
   String density;
@@ -18,7 +18,7 @@ class BiccoNotifier extends ChangeNotifier {
   bool isLoadingEvents = false;
   String? errorMessage;
 
-  BiccoNotifier({
+  BicoNotifier({
     this.isDark = true,
     this.accent = 'green',
     this.density = 'comfortable',
@@ -37,8 +37,8 @@ class BiccoNotifier extends ChangeNotifier {
     });
   }
 
-  BiccoTokens get tokens {
-    final base = isDark ? BiccoTokens.dark : BiccoTokens.light;
+  BicoTokens get tokens {
+    final base = isDark ? BicoTokens.dark : BicoTokens.light;
     if (accent == 'purple') {
       return base.copyWith(
         green: base.purple,
@@ -73,7 +73,7 @@ class BiccoNotifier extends ChangeNotifier {
   Future<bool> fetchGoogleEvents() async {
     final session = Supabase.instance.client.auth.currentSession;
     if (session == null || session.providerToken == null) {
-      print('Bicco: Sem sessão ou providerToken do Supabase.');
+      print('Bico: Sem sessão ou providerToken do Supabase.');
       return false;
     }
 
@@ -83,7 +83,7 @@ class BiccoNotifier extends ChangeNotifier {
     try {
       googleEvents = await _calendarService.getEventsWithToken(session.providerToken!);
       if (googleEvents.isEmpty) {
-        print('Bicco: Nenhum evento retornado do Google.');
+        print('Bico: Nenhum evento retornado do Google.');
       }
       return googleEvents.isNotEmpty;
     } catch (e) {

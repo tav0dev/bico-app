@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/bicco_provider.dart';
+import '../providers/bico_provider.dart';
 import '../widgets/tuco_slot.dart';
-import '../widgets/bicco_button.dart';
-import '../widgets/bicco_field.dart';
+import '../widgets/bico_button.dart';
+import '../widgets/bico_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(child: TucoSlot(size: 84)),
               const SizedBox(height: 18),
               Text(
-                'Bem-vindo ao Bicco',
+                'Bem-vindo ao Bico',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,

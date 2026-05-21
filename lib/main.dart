@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'providers/bicco_provider.dart';
+import 'providers/bico_provider.dart';
 import 'screens/login_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'screens/main_shell.dart';
@@ -26,23 +26,23 @@ void main() async {
     ));
     runApp(
       ChangeNotifierProvider(
-        create: (_) => BiccoNotifier(),
-        child: const BiccoApp(),
+        create: (_) => BicoNotifier(),
+        child: const BicoApp(),
       ),
     );
   });
 }
 
-class BiccoApp extends StatelessWidget {
-  const BiccoApp({super.key});
+class BicoApp extends StatelessWidget {
+  const BicoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final notifier = context.watch<BiccoNotifier>();
+    final notifier = context.watch<BicoNotifier>();
     final tokens = notifier.tokens;
 
     return MaterialApp(
-      title: 'Bicco',
+      title: 'Bico',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme(
@@ -81,6 +81,5 @@ class BiccoApp extends StatelessWidget {
         '/create-post': (_) => const CreatePostScreen(),
       },
     );
-    .
   }
 }

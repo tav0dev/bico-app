@@ -78,7 +78,7 @@ class ClientsScreen extends StatelessWidget {
 
           // Stats row
           SizedBox(
-            height: 58,
+            height: 75,
             child: ListView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),

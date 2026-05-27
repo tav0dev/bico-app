@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/painting.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:googleapis/calendar/v3.dart' as google;
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../theme/tokens.dart';
